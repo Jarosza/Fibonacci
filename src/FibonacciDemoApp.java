@@ -1,19 +1,23 @@
+import java.math.BigInteger;
+
 public class FibonacciDemoApp {
 
 
     public static void main(String[] args) {
-        System.out.println(fibo(4));
+        for (int i = 1; i < 50; i++){
+            System.out.println(i + " ==>" + fibo(i));
+        }
     }
 
-        static int fibo ( int n){
+        static BigInteger fibo (int n){
             if (n == 0) {
-                return 0;
+                return BigInteger.ZERO;
             }
             if (n == 1) {
-                return 1;
+                return BigInteger.ONE;
             }
 
-            return fibo(n - 1) + fibo(n - 2);
+            return fibo(n - 1).add(fibo(n - 2));
 
         }
 }
